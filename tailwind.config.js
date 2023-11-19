@@ -5,7 +5,10 @@ export default {
     extend: {
       fontFamily: {
         mainFont: ['"Kumbh Sans"'],
-      }
+      },
+      colors: {
+        'secondColor': '#F47B56',
+       },
     },
   },
   plugins: [],

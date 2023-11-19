@@ -5,54 +5,90 @@ import mainImageShadow from "./assets/shadowmb.svg";
 import mainImageArrow from "./assets/arrow.svg";
 
 function App() {
+  const faqData = [
+    {
+      id: 1,
+      question: "How many team members can I invite?",
+      answer: null,
+    },
+    {
+      id: 2,
+      question: "Whats is the maximum file upload size?",
+      answer:
+        "No more than 2GB. All files in your account must fit your allotted storage space.",
+    },
+    {
+      id: 3,
+      question: "How do I reset my password",
+      answer: null,
+    },
+    {
+      id: 4,
+      question: "Can I cancel my subscription",
+      answer: null,
+    },
+    {
+      id: 5,
+      question: "Do you provide additional support",
+      answer: null,
+    },
+  ];
+
   return (
     <>
       <main className="bg-[url('./assets/Rectangle.svg')] h-screen bg-cover flex items-center justify-center">
-        <section className="bg-white w-80 h-fit rounded-lg grid grid-cols-5 grid-rows-5">
-          <div className="absolute top-8 right-12">
-            <picture>
-              <source media="(min-width:480px)" srcSet={mainImageDstkp} />
+        <section className="bg-white w-11/12 h-fit rounded-2xl grid grid-cols-5 grid-rows-5">
+          <div className="absolute top-7 right-12 md:hidden">
               <img
                 src={mainImageMb}
                 alt="main icon mobile"
                 className="w-64 mr-9"
               />
-            </picture>
             <img
               src={mainImageShadow}
               alt="shadow icon mobile"
               className="ml-5 -mt-20 pb-2"
             />
           </div>
+          <div className="hidden md:block">
+              <img
+                src={mainImageDstkp}
+                alt="main icon desktop"
+                className="w-64 mr-9"
+              />
+            <img
+              src={mainImageShadow}
+              alt="shadow icon desktop"
+              className="ml-5 -mt-20 pb-2"
+            />
+          </div>
 
           <div className="font-mainFont p-6 pt-1 row-start-2 row-end-6 col-start-1 col-end-7">
-            <h1 className="font-black text-4xl pb-8 pl-9 ml-16">
-              FAQ
-            </h1>
-            <div className="relative">
-              <div className="border-b-2 pb-5">
-                <h2 className="text-sm">How many team members can I invite?</h2>
-                <img src={mainImageArrow} alt="arrow section" className="absolute right-0 top-2" />
-              </div>
-              <div className="border-b-2 pb-5">
-                <h2 className="text-sm pb-3 pt-3 font-bold w-56">Whats is the maximum file upload size?</h2>
-                <img src={mainImageArrow} alt="arrow section" className="absolute right-0 top-16 rotate-180" />
-                <p className="font-extralight text-xs w-5/6">
-                No more than 2GB. All files in your account must fit your
-                allotted storage space.</p>
-              </div>
-              <div className="border-b-2 pb-3">
-                <h2 className="text-sm pb-3 pt-3">How do I reset my password</h2>
-                <img src={mainImageArrow} alt="arrow section" className="absolute right-0 top-[194px]" />
-              </div>
-              <div className="border-b-2 pb-2">
-                <h2 className="text-sm pb-2 pt-3">Can I cancel my suscription</h2>
-                <img src={mainImageArrow} alt="arrow section" className="absolute right-0 top-[250px]" />
-              </div>
-              <div className="border-b-2 pb-2 mb-7">
-                <h2 className="text-sm pb-3 pt-3">Do you provide additional support</h2>
-                <img src={mainImageArrow} alt="arrow section" className="absolute right-0 top-[305px]" />
-              </div>
+            <div className="flex items-center justify-center">
+              <h1 className="font-black text-4xl pb-8 pt-5">FAQ</h1>
+            </div>
+            <div className="relative pb-2">
+              {faqData.map((item) => (
+                <div key={item.id} className="border-b-2 pb-5 mt-4">
+                  <div className="flex items-center">
+                    <h2 className="text-sm hover:text-secondColor flex-grow">
+                      {item.question}
+                    </h2>
+                    <img
+                      src={mainImageArrow}
+                      alt="arrow section"
+                      className="ml-2"
+                    />
+                  </div>
+                  {item.answer && (
+                    <div className="mt-2">
+                      <p className="font-extralight text-xs w-5/6">
+                        {item.answer}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -62,22 +98,3 @@ function App() {
 }
 
 export default App;
-
-{
-  /* <h2>c</h2>
-              <img
-                src={mainImageArrow}
-                alt="arrow section"
-                className="w-3"
-              />
-              <h2 className="font-bold">
-                Whats is the maximum file upload size?
-              </h2>
-              <p className="font-extralight text-xs">
-                No more than 2GB. All files in your account must fit your
-                allotted storage space.
-              </p>
-              <h2>How do I reset my password</h2>
-              <h2>Can I cancel my suscription</h2>
-              <h2>Do you provide additional support</h2> */
-}
