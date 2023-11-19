@@ -1,6 +1,6 @@
 import cubeImage from "./assets/cube.svg";
 import mainImageMb from "./assets/mainImagemb.svg";
-import mainImageDstkp from "./assets/mainImagedstk.svg";
+import mainImageDstkp from "./assets/mainImageDstkp.svg";
 import mainImageShadow from "./assets/shadowmb.svg";
 import mainImageArrow from "./assets/arrow.svg";
 
@@ -37,37 +37,38 @@ function App() {
   return (
     <>
       <main className="bg-[url('./assets/Rectangle.svg')] h-screen bg-cover flex items-center justify-center">
-        <section className="bg-white w-11/12 h-fit rounded-2xl grid grid-cols-5 grid-rows-5">
+        <section className="bg-white w-11/12 h-fit rounded-2xl grid grid-cols-5 grid-rows-5 md:flex md:h-3/5 md:w-7/12">
           <div className="absolute top-7 right-12 md:hidden">
-              <img
-                src={mainImageMb}
-                alt="main icon mobile"
-                className="w-64 mr-9"
-              />
+            <img
+              src={mainImageMb}
+              alt="main icon mobile"
+              className="w-64 mr-9"
+            />
             <img
               src={mainImageShadow}
               alt="shadow icon mobile"
               className="ml-5 -mt-20 pb-2"
             />
           </div>
-          <div className="hidden md:block">
-              <img
-                src={mainImageDstkp}
-                alt="main icon desktop"
-                className="w-64 mr-9"
-              />
+          <div className="hidden md:flex">
             <img
-              src={mainImageShadow}
+              src={mainImageDstkp}
+              alt="main icon desktop"
+              className="w-64 mr-9"
+            />
+            <img
+              src={cubeImage}
               alt="shadow icon desktop"
               className="ml-5 -mt-20 pb-2"
             />
+
           </div>
 
           <div className="font-mainFont p-6 pt-1 row-start-2 row-end-6 col-start-1 col-end-7">
             <div className="flex items-center justify-center">
-              <h1 className="font-black text-4xl pb-8 pt-5">FAQ</h1>
+              <h1 className="font-black text-4xl pb-8 pt-5 md:pt-10">FAQ</h1>
             </div>
-            <div className="relative pb-2">
+            <div className="relative pb-2 md:pb-5">
               {faqData.map((item) => (
                 <div key={item.id} className="border-b-2 pb-5 mt-4">
                   <div className="flex items-center">
