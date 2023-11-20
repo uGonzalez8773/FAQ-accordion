@@ -1,6 +1,6 @@
 import cubeImage from "./assets/cube.svg";
 import mainImageMb from "./assets/mainImagemb.svg";
-import mainImageDstkp from "./assets/mainImageDstkp.svg";
+import mainImageDsktp from "./assets/mainImageDesktop.svg";
 import mainImageShadow from "./assets/shadowmb.svg";
 import mainImageArrow from "./assets/arrow.svg";
 
@@ -50,22 +50,22 @@ function App() {
               className="ml-5 -mt-20 pb-2"
             />
           </div>
-          <div className="hidden md:flex">
+          <div className="hidden md:flex md:w-1/2">
             <img
-              src={mainImageDstkp}
+              src={mainImageDsktp}
               alt="main icon desktop"
-              className="w-64 mr-9"
+              className="w-96 absolute bottom-80 left-60"
             />
             <img
               src={cubeImage}
-              alt="shadow icon desktop"
-              className="ml-5 -mt-20 pb-2"
+              alt="cube icon desktop"
+              className="w-36 absolute bottom-[359px] left-60"
             />
 
           </div>
 
-          <div className="font-mainFont p-6 pt-1 row-start-2 row-end-6 col-start-1 col-end-7">
-            <div className="flex items-center justify-center">
+          <div className="font-mainFont p-6 pt-1 row-start-2 row-end-6 col-start-1 col-end-7 md:pr-24">
+            <div className="flex items-center justify-center md:items-start md:justify-start">
               <h1 className="font-black text-4xl pb-8 pt-5 md:pt-10">FAQ</h1>
             </div>
             <div className="relative pb-2 md:pb-5">
