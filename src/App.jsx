@@ -3,6 +3,7 @@ import mainImageMb from "./assets/mainImagemb.svg";
 import mainImageDsktp from "./assets/mainImageDesktop.svg";
 import mainImageShadow from "./assets/shadowmb.svg";
 import mainImageArrow from "./assets/arrow.svg";
+import mainShadowDsktp from './assets/shadowDesktop.svg'
 
 function App() {
   const faqData = [
@@ -42,24 +43,29 @@ function App() {
             <img
               src={mainImageMb}
               alt="main icon mobile"
-              className="w-64 mr-9"
+              className="w-64 mr-4"
             />
             <img
               src={mainImageShadow}
               alt="shadow icon mobile"
-              className="ml-5 -mt-20 pb-2"
+              className="w-64 pb-2 absolute top-32 right-6"
             />
           </div>
           <div className="hidden md:flex md:w-1/2">
             <img
               src={mainImageDsktp}
               alt="main icon desktop"
-              className="w-96 absolute bottom-80 left-60"
+              className="w-96 absolute bottom-80 left-60 z-10"
             />
             <img
               src={cubeImage}
               alt="cube icon desktop"
-              className="w-36 absolute bottom-[359px] left-60"
+              className="w-36 absolute bottom-[359px] left-60 z-20"
+            />
+            <img
+              src={mainShadowDsktp}
+              alt="shadow icon desktop"
+              className="w-[946px] absolute bottom-20 -left-80 z-0"
             />
 
           </div>
