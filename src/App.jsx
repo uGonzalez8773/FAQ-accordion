@@ -50,38 +50,38 @@ function App() {
   return (
     <>
       <main className="bg-[url('./assets/Rectangle.svg')] h-screen bg-cover flex items-center justify-center">
-        <section className="bg-white w-11/12 h-fit rounded-2xl grid grid-cols-5 grid-rows-5 md:flex md:h-3/5 md:w-7/12 relative">
+        <section className="bg-white w-11/12 h-fit rounded-2xl grid grid-cols-5 grid-rows-5 relative md:flex md:flex-row-reverse md:h-fit md:w-7/12 ">
           <div className="absolute inset-x-0 -top-3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:hidden flex flex-col items-center justify-center">
             <img
               src={mainImageMb}
               alt="main icon mobile"
-              className="w-64 relative z-10"
+              className="relative z-10"
             />
             <img
               src={mainImageShadow}
               alt="shadow icon mobile"
-              className="w-64 absolute top-20 left-1/2 transform -translate-x-1/2 z-0"
+              className="absolute top-20 left-1/2 transform -translate-x-1/2 z-0"
             />
           </div>
-          <div className="hidden md:flex md:w-1/2">
+          <div className="hidden md:flex md:w-1/2 md:absolute md:top-1/2 md:left-0 md:transform md:-translate-x-1/2 md:-translate-y-1/2 ">
             <img
               src={cubeImage}
               alt="cube icon desktop"
-              className="w-36 absolute bottom-[359px] z-20"
+              className="absolute transform -translate-y-1/2 z-20"
             />
             <img
               src={mainImageDsktp}
               alt="main icon desktop"
-              className="w-96 absolute bottom-80 z-10"
+              className="absolute transform -translate-y-1/2 z-10"
             />
             <img
               src={mainShadowDsktp}
               alt="shadow icon desktop"
-              className="w-[946px] absolute bottom-20 -left-80 z-0"
+              className="absolute transform -translate-y-1/2 left-0 z-0"
             />
           </div>
 
-          <div className="font-mainFont p-6 pt-1 row-start-2 row-end-6 col-start-1 col-end-7">
+          <div className="font-mainFont p-6 pt-1 row-start-2 row-end-6 col-start-1 col-end-7 md:p-1 md:w-7/12 md:pr-10 md:">
             <div className="flex items-center justify-center md:items-start md:justify-start">
               <h1 className="font-black text-4xl pb-8 pt-5 md:pt-10">FAQ</h1>
             </div>
@@ -89,7 +89,7 @@ function App() {
               {faqData.map((item) => (
                 <div key={item.id} className="border-b-2 pb-5 mt-4">
                   <div className="flex items-center" onClick={() => handleClick(item.id)}>
-                    <h2 className="text-sm hover:text-secondColor flex-grow">
+                    <h2 className="text-sm hover:text-secondColor flex-grow ">
                       {item.question}
                     </h2>
                     <img
